@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Conversor de Temperatura</title>
+  <style>
+    body {
+      background-color: lightblue;
+      transition: background-color 0.5s ease;
+    }
+    
+    .container {
+      text-align: center;
+      margin-top: 100px;
+    }
+    
+    input[type="text"], button {
+      padding: 10px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Conversor de Temperatura</h2>
+    <input type="text" id="tempFahrenheit" placeholder="Temperatura em Fahrenheit">
+    <button onclick="converterTemperatura()">Converter</button>
+  </div>
+
+  <script>
+    function converterTemperatura() {
+      var tempFahrenheit = document.getElementById("tempFahrenheit").value;
+      
+      if (!tempFahrenheit) {
+        alert("Por favor, insira uma temperatura em Fahrenheit.");
+        return;
+      }
+      
+      var tempCelsius = (tempFahrenheit - 32) * 5 / 9;
+      
+      document.body.style.backgroundColor = tempCelsius > 30 ? "orange" : "lightblue";
+      alert("A temperatura em Celsius é: " + tempCelsius.toFixed(2));
+    }
+  </script>
+  <link rel="stylesheet" href="index.js">
+</body>
+</html>
